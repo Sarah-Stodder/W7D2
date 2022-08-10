@@ -76,11 +76,11 @@ Rowen.printInfo()
 */
 
 function checkString (str){
-    return new Promise( (yep, nope) => {
-        str.length > 10 ? yep('Big word') : nope('Small Number')
+    return new Promise( (yes, no) => {
+        str.length > 10 ? yes('Big word') : no('Small Number')
     })
     .then( (result)=> console.log(result))
     .catch( (error)=> console.log(error))
 }
 
-checkString('Hi how are you today?')
+checkString('Hi how are you today? please go easy on me today')
