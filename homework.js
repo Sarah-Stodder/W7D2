@@ -17,11 +17,28 @@ let person3 = {
         cupids_candies:"Chocolate Malt"
     }]
 }
-let favoriteFood = (person) => {
-    for (let i = 0; i < Object.keys(person).length; i++) {
-        console.log(Object.values(person)[i]);
+function favoriteFood(object) {
+    for (let key in object) {
+      console.log(`${key}:`)
+  
+      if (Array.isArray(object[key])) {
+        for (const item of object[key]) {
+          if (item instanceof Object) {
+            for (const i in item) {
+              console.log(`  ${i}:`)
+              console.log(`  ${item[i]}`)
+            }
+          } else {
+            console.log(`  ${item}`);
+          }
+        }
+      } else {
+        console.log(` ${object[key]}`);
+      }
     }
-}
+  }
+  
+
 
 favoriteFood(person3)
 
